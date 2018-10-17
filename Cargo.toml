@@ -2,10 +2,10 @@
 name = "avapi"
 version = "0.1.0"
 authors = ["Natalie Pendragon <natpen@natpen.net>"]
+keywords = ["api", "stocks", "financial", "alpha-vantage"]
 license = "MIT"
 readme = "README.md"
-description = "Crate for consuming financial APIs as a client"
-documentation = "https://docs.rs/avapi"
+description = "Crate for consuming the Alpha Vantage financial data API as a client"
 repository = "https://github.com/natpen/avapi"
 
 [dependencies]
