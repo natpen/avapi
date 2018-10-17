@@ -1,0 +1,15 @@
+[package]
+name = "avapi"
+version = "0.1.0"
+authors = ["Natalie Pendragon <natpen@natpen.net>"]
+license = "MIT"
+readme = "README.md"
+description = "Crate for consuming financial APIs as a client"
+documentation = "https://docs.rs/avapi"
+repository = "https://github.com/natpen/avapi"
+
+[dependencies]
+config = "0.9"
+reqwest = "0.9"
+serde = "1.0"
+serde_derive = "1.0"
