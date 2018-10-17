@@ -12,6 +12,12 @@ impl Request {
         let res: Response = reqwest::get(url)?.json()?;
         Ok(res)
     }
+
+    pub fn build_url(&self, base_url: &str, api_key: &str) -> String {
+        match self {
+            Request::Quote(r) => r.build_url(base_url, api_key),
+        }
+    }
 }
 
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq)]
