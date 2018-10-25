@@ -19,16 +19,16 @@ avapi = "0.1"
 ```rust,no_run
 extern crate avapi;
 
-use avapi::{endpoints, models};
+use avapi::endpoints;
 
 fn main() {
     let api_key = String::from("<YOUR AV KEY>");
     let client = avapi::client::Client {
         api_key: api_key,
     };
-    let request =  models::Request::Quote(endpoints::global_quote::Request {
+    let request =  endpoints::global_quote::GlobalQuoteRequest {
         symbol: String::from("GOOG"),
-    });
+    };
     let res = client.make_request(request).unwrap();
     println!("{:#?}", res);
 }

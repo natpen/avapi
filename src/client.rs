@@ -1,6 +1,4 @@
-use reqwest::{self};
-
-use models;
+use reqwest;
 
 pub struct Client {
     pub api_key: String,
@@ -8,8 +6,11 @@ pub struct Client {
 
 impl Client {
     const BASE_URL: &'static str = "https://www.alphavantage.co/query/";
-    
-    pub fn make_request(&self, request: models::Request) -> Result<models::Response, reqwest::Error> {
+
+    pub fn make_request<T>(&self, request: T) -> Result<T::Response, reqwest::Error>
+    where
+        T: ::Request,
+    {
         let url = request.build_url(&Client::BASE_URL, &self.api_key);
         Ok(request.call(&url)?)
     }
